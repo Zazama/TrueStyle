@@ -1,0 +1,86 @@
+{{!< default}}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 article-item">
+            {{#post}}
+            <article>
+                <a href="{{url}}" class="article-title-link"><h2 class="article-title">{{title}}</h2></a>
+                <div class="article-info">
+                    <ul class="list-inline">
+                        <li>{{author}}</li>
+                        <li>{{date}}</li>
+                        {{#foreach tags}}
+                        <li><a href="{{url}}">{{name}}</a></li>
+                        {{/foreach}}
+                    </ul>
+                </div>
+                <div class="article-content">
+                    {{#if image}}
+                        <a href="{{url}}"><img src="{{image}}" alt="{{name}}" class="index-article-image" /></a><hr />
+                    {{/if}}
+                    {{content}}
+                </div>
+                <hr />
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                var disqus_shortname = '!!!!!!!!ENTER YOUR DISQUS SHORTNAME HERE!!!!!!';
+                (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+            </article>
+            {{/post}}
+        </div>
+        <aside>
+            <div class="col-md-3">
+                <div class="aside-latest">
+                    <h4>Latest Articles</h4>
+                    <ul id="aside-ul">
+                        {{#foreach posts}}
+                        {{#if @last}}
+                        <li><a href="{{url}}">{{title}}</a></li>
+                        {{else}}
+                        <li><a href="{{url}}">{{title}}</a></li>
+                        <hr />
+                        {{/if}}
+                        {{/foreach}}
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            var wrapper = document.createElement('div');
+            wrapper.innerHTML = xmlhttp.responseText;
+            var wrapperarray = wrapper.getElementsByClassName('article-title');
+            var wrapperlinkarray = wrapper.getElementsByClassName('article-title-link');
+            for(var i = 0; i < wrapperarray.length; i++){
+                document.getElementById('aside-ul').innerHTML += '<li><a href="' + wrapperlinkarray[i] + '">' + wrapperarray[i].innerHTML + '</a></li><hr />'            
+            }
+            delete wrapper;
+        }
+    }
+    xmlhttp.open("GET","/",true);
+    xmlhttp.send();
+</script>

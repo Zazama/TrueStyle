@@ -1,0 +1,13 @@
+<aside>
+    <div class="col-md-3">
+        <div class="aside-latest">
+            <h4>Latest Articles</h4>
+            <ul id="aside-ul">
+		{{#foreach posts}}
+		    <li><a href="{{url}}">{{title}}</a></li>
+                    <hr />
+		{{/foreach}}
+            </ul>
+        </div>
+    </div>
+</aside>

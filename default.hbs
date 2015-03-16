@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="description" content="{{meta_description}}" />
+
+
+   <title>{{meta_title}}</title>
+   
+   <link rel="stylesheet" href="{{asset "css/bootstrap.min.css"}}">
+   <link rel="stylesheet" href="{{asset "css/screen.css"}}">
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+   
+    <!--[if lt IE 9]>
+            <script src="{{asset "js/html5shiv.js"}}"></script>
+    <![endif]-->
+   
+   
+    {{ghost_head}}
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/"><h1>{{@blog.title}}</h1></a>
+                </div>
+                <div class="col-md-12 navbar-menu">
+                    <div class="collapse navbar-collapse">
+			            {{navigation}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>   
+    </header>
+    <div class="container" id="article-container">
+        <div class="row">
+            {{{body}}}
+        </div>
+    </div>    
+    <footer class="col-md-12">
+        <div class="container">
+            <div class="row">
+                <span>Website &copy; </span><span id="setDate">2015</span><span> {{@blog.title}} | Code and Design by <a href="http://zazama.de/">Jan Metzger</a></span>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="text/javascript">
+        var getDate = new Date();
+        document.getElementById('setDate').innerHTML = getDate.getFullYear();
+    </script>
+</body>
+</html>

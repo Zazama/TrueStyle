@@ -1,0 +1,20 @@
+{
+  "name": "TrueStyle",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zazama/TrueStyle"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "bootstrap",
+    "responsive",
+    "TrueStyle"
+  ],
+  "author": "Jan Metzger <jan.metzger@gmx.net",
+  "bugs": {
+    "url": "https://github.com/Zazama/TrueStyle/issues"
+  },
+  "homepage": "https://github.com/Zazama/TrueStyle"
+}

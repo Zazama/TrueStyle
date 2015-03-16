@@ -1,0 +1,31 @@
+{{!< default}}
+
+        <div class="col-md-9 article-item">
+            {{#foreach posts}}
+            <article>
+                <a href="{{url}}" class="article-title-link"><h2 class="article-title">{{title}}</h2></a>
+                <div class="article-info">
+                    <ul class="list-inline">
+                        <li>{{author}}</li>
+                        <li>{{date}}</li>
+                        {{#foreach tags}}
+                        <li><a href="{{url}}">{{name}}</a></li>
+                        {{/foreach}}
+                    </ul>
+                </div>
+                <div class="article-content">
+                    {{#if image}}
+                        <a href="{{url}}"><img src="{{image}}" alt="{{name}}" class="index-article-image" /></a><hr />
+                    {{/if}}
+                    {{excerpt words="100"}}<span>...</span>
+                </div>
+                <hr />
+                <div class="article-footer">
+                    <span><a href="{{url}}">Comments / Read more</a></span>
+                </div>
+            </article>
+            {{/foreach}}
+            {{pagination}}
+        </div>
+        {{> "aside"}}
+
