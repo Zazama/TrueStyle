@@ -62,20 +62,26 @@ code {
     margin: 0.5em 0;
 }
 
-@media (min-width: 768px) {
-    .navbar .navbar-nav {
-        display: inline-block;
-        float: none;
-        vertical-align: top;
-    }
+.outerNav {
+    text-align: center;
+}
 
-    .navbar .navbar-collapse {
-        text-align: center;
-    }
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    text-align: center;
+}
+
+.navbar-nav > li {
+    float: left;
+}
+
+@media (min-width: 768px) {
    
     .container {
         width: inherit !important;
-	max-width: 1170px;
+	    max-width: 1170px;
     }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "TrueStyle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/Zazama/TrueStyle"
@@ -12,7 +12,7 @@
     "responsive",
     "TrueStyle"
   ],
-  "author": "Jan Metzger <jan.metzger@gmx.net",
+  "author": "Jan Metzger <jan.metzger@gmx.net>",
   "bugs": {
     "url": "https://github.com/Zazama/TrueStyle/issues"
   },

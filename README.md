@@ -1,5 +1,5 @@
 # TrueStyle
-TrueStyle is a responsive Bootstrap Theme for Ghost (working with Ghost 0.5.10).
+TrueStyle is a responsive Bootstrap Theme for Ghost (working with Ghost 0.6.4).
 
 It supports the latest updates and has the navigation helper implemented.
 
